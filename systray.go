@@ -24,6 +24,11 @@ var (
 	quitOnce  sync.Once
 )
 
+var (
+	// TrayOpenedCh is the channel which will be notified when system tray is shown. Only works on Windows.
+	TrayOpenedCh = make(chan struct{})
+)
+
 func init() {
 	runtime.LockOSThread()
 }
